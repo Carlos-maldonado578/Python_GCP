@@ -45,5 +45,5 @@
         - name: Deploy Google Cloud Run
           uses: google-github-actions/deploy-cloudrun@v2
           with:
-            service: '$PROJECT_ID'
-            image: '$REGION-docker.pkg.dev/$PROJECT_ID/$REPO/$IMAGE_NAME'
+            service: ${{env.PROJECT_ID}}
+            image: '${{env.REGION}}-docker.pkg.dev/${{env.PROJECT_ID}}/${{env.REPO}}/${{env.IMAGE_NAME}}'
