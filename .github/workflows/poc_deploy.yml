@@ -41,3 +41,9 @@
             context: .
             push: true
             tags: ${{env.IMAGE_TAG}}
+
+        - name: Deploy Google Cloud Run
+          uses: google-github-actions/deploy-cloudrun@v2
+          with:
+            service: '$PROJECT_ID'
+            image: '$REGION-docker.pkg.dev/$PROJECT_ID/$REPO/$IMAGE_NAME'
